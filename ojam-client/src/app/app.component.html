@@ -1,0 +1,9 @@
+<router-outlet></router-outlet>
+<div>
+  <h2>Real-Time List</h2>
+  <ul>
+    <li *ngFor="let item of list">{{ item }}</li>
+  </ul>
+  <input [(ngModel)]="newItem" placeholder="Add new item" />
+  <button (click)="addItem()">Add</button>
+</div>

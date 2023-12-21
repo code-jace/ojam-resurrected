@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time List App</title>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    // Function to update the list on the server
+    function updateList(list) {
+      socket.emit('updateList', list);
+    }
+
+    // Function to handle updated list from the server
+    socket.on('listUpdated', (updatedList) => {
+      // Update your UI with the new list
+      console.log('List updated:', updatedList);
+    });
+  </script>
+</body>
+</html>
